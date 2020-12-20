@@ -5,13 +5,13 @@
 #
 """ Userbot module for keeping control who PM you. """
 
-from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+from telethon.tl.functions.contacts import BlockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 from sqlalchemy.exc import IntegrityError
 
-from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
-                     LASTMSG, LOGS)
+from userbot import (COUNT_PM, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN, LASTMSG,
+                     LOGS)
 
 from userbot.events import register
 
@@ -191,7 +191,7 @@ async def disapprovepm(disapprvpm):
 
     await disapprvpm.edit(
         f"`#AbucuyyBot: ...!`\n\n"
-      f"`Telah Selesai Melakukan Transaksi Dengan` [{name0}](tg://user?id={disapprvpm.chat_id})")
+        f"`Telah Selesai Melakukan Transaksi Dengan` [{name0}](tg://user?id={disapprvpm.chat_id})")
 
     if BOTLOG:
         await disapprvpm.client.send_message(
